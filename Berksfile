@@ -7,4 +7,5 @@ metadata
 
 group :integration do
   cookbook 'zookeeper-service', path: 'test/cookbooks/zookeeper-service'
+  cookbook 'mesos-custom-repo', path: 'test/cookbooks/mesos-custom-repo'
 end

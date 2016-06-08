@@ -12,11 +12,13 @@ platforms:
   - name: centos-7.2
   - name: centos-6.7
   - name: ubuntu-14.04
+  - name: ubuntu-16.04
 
 suites:
 - name: default
   run_list:
   - recipe[zookeeper-service]
+  - recipe[mesos-custom-repo]
   - recipe[mesos::master]
   - recipe[mesos::slave]
   - recipe[marathon]
@@ -24,6 +26,7 @@ suites:
   attributes:
     mesos:
       version: 0.28.1
+      repo:    false
     marathon:
       flags:
         master: localhost:5050
